@@ -19,7 +19,16 @@
                         <thead>
                           <tr>
                             <th scope="col">
-                                Grupo(s)
+                                ID
+                            </th>
+                            <th scope="col">
+                                Cliente
+                            </th>
+                            <th scope="col">
+                                Email
+                            </th>
+                            <th scope="col">
+                                Endereço
                             </th>
                             <th scope="col">
                                 Ação
@@ -30,15 +39,24 @@
                           @foreach ($clientes as $cliente)
                           <tr>
                             <th scope="row">
+                                {{ $cliente->id }}
+                            </th>
+                            <th scope="row">
                                 {{ $cliente->nome }}
                             </th>
                             <th scope="row">
-                              {{--   <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-outline-success">Time</button>
+                                {{ $cliente->email }}
+                            </th>
+                            <th scope="row">
+                                {{ $cliente->endereco }}
+                            </th>
+                            <th scope="row">
+                               <div class="btn-group" role="group">
+
                                     <a type="button" class="btn btn-outline-warning" href="{{ route('cliente.editar',$cliente->id) }}" >Editar</a>
-                                    <a type="button" class="btn btn-outline-danger" 
-                                    onclick="return (confirm('Deletar esse registro?') ? window.location.href='{{ route('cliente.deletar',$cliente->id) }}' : false)">Excluir</a>
-                                </div> --}}
+                                    <a type="button" class="btn btn-outline-warning" href="{{ route('cliente.detalhe',$cliente->id) }}" >Detalhe</a>
+                                    <a type="button" class="btn btn-outline-danger" onclick="return (confirm('Deletar esse registro?') ? window.location.href='{{ route('cliente.deletar',$cliente->id) }}' : false)">Excluir</a>                                   
+                                </div>
                             </th>
                           </tr>
                           @endforeach

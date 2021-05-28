@@ -15,7 +15,7 @@ class Cliente extends Model
 
     public function telefones()
     {
-        return $this->hasMany('App\telefone');
+        return $this->hasMany('App\Models\telefone');
     }
 
     public function addTelefone(Telefone $telefone)

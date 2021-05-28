@@ -34,6 +34,15 @@
                 </div>
             </div>
         @endif
+        @if (Session::has('errors'))
+            <br>
+            <div class="col-md-12 col-md-offset-1">
+                <div class="alert alert-danger" role="alert">
+                    {{ session('error') }}
+                </div>
+            </div>
+        @endif
+        
 
         <main class="py-4">
             @yield('content')

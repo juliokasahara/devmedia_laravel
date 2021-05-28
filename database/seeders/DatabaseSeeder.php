@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Cliente;
+use App\Models\Telefone;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
        /*   \App\Models\User::factory(10)->create(); */
-         \App\Models\Cliente::factory(10)->create();
+       $user = Cliente::factory()->has(Telefone::factory()->count(3), 'posts')->create(); 
     }
 }

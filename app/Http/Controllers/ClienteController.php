@@ -20,9 +20,6 @@ class ClienteController extends Controller
     public function index()
     {
         $clientes = \App\Models\Cliente::paginate(5);
-
-        // Dispatch::where('user_id', Auth::id())->paginate(10);
- 
          return view('cliente.list_cliente',compact('clientes'));
 
     }
@@ -32,7 +29,7 @@ class ClienteController extends Controller
         return view('cliente.add_cliente');
     }
 
-    public function save(Request $request)
+    public function salvar(Request $request)
     {
         \App\Models\Cliente::create($request->all());
 
@@ -40,4 +37,44 @@ class ClienteController extends Controller
 
         return redirect()->action([ClienteController::class, 'index']);
     }
+
+    public function editar($id,Request $request)
+    {
+        $cliente = \App\Models\Cliente::find($id);
+        if (!$cliente) {
+            Session::flash('error', 'não existe esse cliente!'); 
+
+            return redirect()->action([ClienteController::class, 'adicionar']);
+        }
+
+        Session::flash('status', 'Atualizado com sucesso!'); 
+
+        return view('cliente.edi_cliente',compact('cliente'));
+    }
+
+    public function atualizar(Request $request,$id)
+    {
+        \App\Models\Cliente::find($id)->update($request->all());
+
+        Session::flash('status', 'Atualizado com sucesso!'); 
+
+        return redirect()->action([ClienteController::class, 'index']);
+    }
+
+    public function deleter($id)
+    {
+        $cliente = \App\Models\Cliente::find($id);
+        $cliente->delete();
+
+        Session::flash('status', 'Grupo deletado com sucesso!'); 
+
+        return redirect()->action([ClienteController::class, 'index']);
+    }
+
+    public function detalhe($id)
+    {
+        $cliente = \App\Models\Cliente::find($id);
+        return view('cliente.list_cliente_detalhe',compact('cliente'));
+    }
+
 }

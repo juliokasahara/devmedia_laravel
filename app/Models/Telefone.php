@@ -9,8 +9,10 @@ class Telefone extends Model
 {
     use HasFactory;
 
+    protected $fillable=['titulo','telefone'];
+
     public function cliente()
     {
-        return $this->belongsTo('App\cliente');
+        return $this->belongsTo('App\Models\Cliente');
     }
 }
