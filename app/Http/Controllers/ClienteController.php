@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ClienteRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class ClienteController extends Controller
 {
+
+    
         /**
      * Create a new controller instance.
      *
@@ -29,11 +32,12 @@ class ClienteController extends Controller
         return view('cliente.add_cliente');
     }
 
-    public function salvar(Request $request)
+    public function salvar(ClienteRequest $request)
     {
+        
         \App\Models\Cliente::create($request->all());
 
-        Session::flash('status', 'Salvo com sucesso!'); 
+        Session::flash('status', 'Salvo com sucesso!');
 
         return redirect()->action([ClienteController::class, 'index']);
     }
@@ -42,12 +46,10 @@ class ClienteController extends Controller
     {
         $cliente = \App\Models\Cliente::find($id);
         if (!$cliente) {
-            Session::flash('error', 'não existe esse cliente!'); 
+            Session::flash('custon-error', 'não existe esse cliente!'); 
 
             return redirect()->action([ClienteController::class, 'adicionar']);
         }
-
-        Session::flash('status', 'Atualizado com sucesso!'); 
 
         return view('cliente.edi_cliente',compact('cliente'));
     }

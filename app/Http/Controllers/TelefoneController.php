@@ -42,12 +42,10 @@ class TelefoneController extends Controller
     {
         $tel = \App\Models\Telefone::find($id);
         if (!$tel) {
-            Session::flash('error', 'não existe esse cliente!'); 
+            Session::flash('custon-error', 'não existe esse cliente!'); 
 
             return redirect()->action([ClienteController::class, 'detalhe'], [$tel->cliente->id]);
         }
-
-        Session::flash('status', 'Atualizado com sucesso!'); 
 
         return view('telefone.edi_telefone',compact('tel'));
     }

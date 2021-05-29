@@ -34,14 +34,30 @@
                 </div>
             </div>
         @endif
-        @if (Session::has('errors'))
+        @if (Session::has('custon-error'))
             <br>
             <div class="col-md-12 col-md-offset-1">
                 <div class="alert alert-danger" role="alert">
-                    {{ session('error') }}
+                    {{ session('custon-error') }}
                 </div>
             </div>
         @endif
+
+
+   {{-- abrir alerta com as validacao --}}
+        @if($errors->any())
+        <br>
+        <div class="col-md-12 col-md-offset-1">
+                <div class="alert alert-danger" role="alert">
+                   <ul>
+                       <li>                          
+                            Verifique os campos
+                       </li>
+                   </ul>
+                </div>
+            </div>
+        @endif 
+
         
 
         <main class="py-4">
