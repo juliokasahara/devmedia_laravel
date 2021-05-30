@@ -6,6 +6,11 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ClienteRequest extends FormRequest
 {
+
+/*     public function response(array $errors){
+        return redirect()->back()->withErrors($errors);
+    } */
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -31,9 +36,6 @@ class ClienteRequest extends FormRequest
 
         
     }
-
-    
-
     
     public function messages()
     {
@@ -41,7 +43,7 @@ class ClienteRequest extends FormRequest
             'nome.required' => 'Preencha um nome',
             'nome.max' => 'Campo ate 255 caracteres',
 
-            'email.required' => 'E-mail valido',
+            'email.required' => 'E-mail vaaalido',
             'email.email' => 'E-mail valido',
             'email.max' => 'Campo ate 255 caracteres',
 

@@ -20,9 +20,14 @@ class ClienteController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
+/*      $user = $request->user();
+        
+        $clientes = \App\Models\Cliente::where('id', '=', $user->id)->paginate(5); */
+        
         $clientes = \App\Models\Cliente::paginate(5);
+
          return view('cliente.list_cliente',compact('clientes'));
 
     }
@@ -34,7 +39,7 @@ class ClienteController extends Controller
 
     public function salvar(ClienteRequest $request)
     {
-        
+
         \App\Models\Cliente::create($request->all());
 
         Session::flash('status', 'Salvo com sucesso!');

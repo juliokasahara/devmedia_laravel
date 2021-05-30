@@ -51,7 +51,7 @@
                            <div class="col-md-3 mb-3">
                                <div class="form-group">
                                    <label for="telefone">Telefone</label>
-                                   <input type="text" name="telefone"class="form-control {{ $errors->has('telefone') ? 'is-invalid' : '' }}" id="telefone">
+                                   <input type="number" name="telefone"class="form-control {{ $errors->has('telefone') ? 'is-invalid' : '' }}" id="telefone">
                                    @if ($errors->has('telefone'))
                                        <span class="help-block">
                                            <strong>{{ $errors->first('telefone') }}</strong>

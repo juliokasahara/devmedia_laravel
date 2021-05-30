@@ -13,6 +13,8 @@ class Cliente extends Model
     /* ::create($request->all()); */
     protected $fillable=['nome','email','endereco'];
 
+    //protected $table = "clientes";
+
     public function telefones()
     {
         return $this->hasMany('App\Models\telefone');

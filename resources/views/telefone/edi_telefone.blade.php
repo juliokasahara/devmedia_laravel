@@ -26,7 +26,7 @@
                         
                         <div class="form-group">
                             <label for="telefone">Telefone</label>
-                            <input type="telefone" name="telefone" class="form-control" placeholder="Telefone" value="{{ $tel->telefone }}"/>
+                            <input type="number" name="telefone" class="form-control" placeholder="Telefone" value="{{ $tel->telefone }}"/>
                         </div>
 
                         <button class="btn btn-info">Atualizar</button>

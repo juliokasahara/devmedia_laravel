@@ -18,6 +18,7 @@ class CreateClientesTable extends Migration
             $table->string('nome');
             $table->string('email');
             $table->string('endereco');
+            //$table->enum('tipo', ['apartamento', 'casa', 'kitnet']);
             $table->timestamps();
         });
     }

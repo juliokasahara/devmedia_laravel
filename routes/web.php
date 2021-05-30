@@ -18,6 +18,8 @@ use App\Http\Controllers\TelefoneController;
 
 Route::get('/', function () {
 
+    /* function Helpr */
+
 /*     array_add()
 	$array = ['nome'=>'Camila','idade'=>'20'];
 	$array = array_add($array,'email','camila@mail.com');
