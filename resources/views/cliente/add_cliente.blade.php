@@ -65,7 +65,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
                                     <label for="endereco">Endereco</label>
-                                    <input type="text" name="endereco"class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" id="endereco">
+                                    <input type="text" name="endereco"class="form-control {{ $errors->has('endereco') ? 'is-invalid' : '' }}" id="endereco">
                                     @if ($errors->has('endereco'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('endereco') }}</strong>

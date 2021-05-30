@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use App\Http\Requests\TelefoneRequest;
 
 class TelefoneController extends Controller
 {
@@ -24,8 +25,9 @@ class TelefoneController extends Controller
         return view('telefone.add_telefone',compact('cliente'));
     }
 
-    public function salvar($idCliente,Request $request)
+    public function salvar($idCliente,TelefoneRequest $request)
     {
+
         $telefone = new \App\Models\Telefone;
 
         $telefone->titulo = $request->input('titulo');

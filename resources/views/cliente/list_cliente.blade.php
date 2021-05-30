@@ -53,9 +53,9 @@
                             <th scope="row">
                                <div class="btn-group" role="group">
 
-                                    <a type="button" class="btn btn-outline-warning" href="{{ route('cliente.editar',$cliente->id) }}" >Editar</a>
-                                    <a type="button" class="btn btn-outline-warning" href="{{ route('cliente.detalhe',$cliente->id) }}" >Detalhe</a>
-                                    <a type="button" class="btn btn-outline-danger" onclick="return (confirm('Deletar esse registro?') ? window.location.href='{{ route('cliente.deletar',$cliente->id) }}' : false)">Excluir</a>                                   
+                                    <a type="button" class="btn btn-secondary" href="{{ route('cliente.editar',$cliente->id) }}" >Editar</a>
+                                    <a type="button" class="btn btn-secondary" href="{{ route('cliente.detalhe',$cliente->id) }}" >Detalhe</a>
+                                    <a type="button" class="btn btn-danger" onclick="return (confirm('Deletar esse registro?') ? window.location.href='{{ route('cliente.deletar',$cliente->id) }}' : false)">Excluir</a>                                   
                                 </div>
                             </th>
                           </tr>

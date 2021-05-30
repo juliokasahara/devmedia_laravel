@@ -24,9 +24,9 @@ class ClienteRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome'=>'required',
-            'email'=>'required',
-            'endereco'=>'required'
+            'nome'=>['required', 'max:255'],
+            'email'=>['required', 'email'],
+            'endereco'=>['required', 'max:255'],
         ];
 
         

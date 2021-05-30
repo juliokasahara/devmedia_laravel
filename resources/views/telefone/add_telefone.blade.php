@@ -16,7 +16,7 @@
 
                     <p><b>Cliente: </b>{{$cliente->nome}}</p>
 
-                    <form action="{{ route('telefone.salvar',$cliente->id) }}" method="post">
+{{--                     <form action="{{ route('telefone.salvar',$cliente->id) }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="name">Título</label>
@@ -30,7 +30,38 @@
 
                         <button class="btn btn-info">Adicionar</button>
 
-                    </form>
+                    </form> --}}
+
+
+                    <form action="{{ route('telefone.salvar',$cliente->id) }}" method="post">
+                        {{ csrf_field() }}
+                       <div class="form-row">
+                           <div class="col-md-3 mb-3">
+                               <div class="form-group">
+                                   {{-- else para verde is-valid na classe --}}
+                                   <label for="titulo">Nome</label>
+                                   <input type="text" name="titulo" class="form-control {{ $errors->has('titulo') ? 'is-invalid' : '' }}" id="titulo">
+                                   @if ($errors->has('titulo'))
+                                       <span class="help-block">
+                                           <strong>{{ $errors->first('titulo') }}</strong>
+                                       </span>
+                                   @endif
+                               </div>
+                           </div>
+                           <div class="col-md-3 mb-3">
+                               <div class="form-group">
+                                   <label for="telefone">Telefone</label>
+                                   <input type="text" name="telefone"class="form-control {{ $errors->has('telefone') ? 'is-invalid' : '' }}" id="telefone">
+                                   @if ($errors->has('telefone'))
+                                       <span class="help-block">
+                                           <strong>{{ $errors->first('telefone') }}</strong>
+                                       </span>
+                                   @endif
+                               </div>
+                           </div>                   
+                       </div>
+                       <button class="btn btn-info">Adicionar</button>
+                   </form>
 
                 </div>
             </div>

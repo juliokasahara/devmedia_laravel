@@ -48,8 +48,8 @@
                                 <th scope="row">
                                    <div class="btn-group" role="group">
     
-                                        <a type="button" class="btn btn-outline-warning" href="{{ route('telefone.editar',$telefone->id) }}" >Editar</a>
-                                        <a type="button" class="btn btn-outline-danger" onclick="return (confirm('Deletar esse registro?') ? window.location.href='{{ route('telefone.deletar',$telefone->id) }}' : false)">Excluir</a>
+                                        <a type="button" class="btn btn-secondary" href="{{ route('telefone.editar',$telefone->id) }}" >Editar</a>
+                                        <a type="button" class="btn btn-danger" onclick="return (confirm('Deletar esse registro?') ? window.location.href='{{ route('telefone.deletar',$telefone->id) }}' : false)">Excluir</a>
                                         
                                     </div>
                                 </th>
